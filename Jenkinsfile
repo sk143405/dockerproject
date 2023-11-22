@@ -6,13 +6,10 @@ pipeline {
             steps {
                 script {
                     // Define the Dockerfile path
-                    def dockerfilePath = 'C:\\test\\Docker\\Dockerfile'
+                    def dockerfilePath = 'C:\\test\\Docker'
 
                     // Build the Docker image
-                    def customImage = docker.build("jenkins:anytag", "-f ${dockerfilePath} .")
-
-                    // Push the Docker image to a registry (optional)
-                    customImage.push()
+                    bat "docker.build jenkins:anytag", "-f ${dockerfilePath} ."
                 }
             }
         }
