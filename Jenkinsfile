@@ -6,9 +6,9 @@ pipeline {
             steps {
                 script {
                     // Define the Dockerfile path
-                    def dockerfilePath = 'C:\\test\\Docker\\Dockerfile'
+                    def dockerfilePath = 'C:\\test\\ .'
 
-                    // Build the Docker image
+                    // Build the Docker image using the docker.build step
                     docker.build("jenkins:2.413", "-f ${dockerfilePath} .")
                 }
             }
